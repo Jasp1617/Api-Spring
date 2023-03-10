@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/sakila")
-@CrossOrigin(origins = "http://localh   ost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ActorController {
 
     @Autowired
@@ -25,17 +25,17 @@ public String hola(){
     return "hola";
 }
 
-@GetMapping("/actors")
+@GetMapping("/actor")
 
 public List<Actor> findAll(){
   return actorRepository.findAll();
 }
-@GetMapping("/actors/{id}")
+@GetMapping("/actor/{id}")
 public Optional<Actor> findById(@PathVariable Integer id){
     return actorRepository.findById(id);
 }
 
-@PostMapping("/actors")
+@PostMapping("/actor")
 public Actor findById(Actor actor){
     return actorRepository.save(actor);
 }
