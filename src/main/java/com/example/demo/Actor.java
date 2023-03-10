@@ -51,5 +51,11 @@ public Date getLastUpdate() {
 public void setLastUpdate(Date lastUpdate) {
     this.lastUpdate = lastUpdate;
 }
+    
+@Override
+public String toString() {
+    return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", lastUpdate=" + lastUpdate
+            + "]";
+}
 
 }
