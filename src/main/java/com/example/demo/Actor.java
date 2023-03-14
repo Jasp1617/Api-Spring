@@ -21,8 +21,6 @@ Integer id;
 String  firstName;
 @Column(name = "last_name")
 String lastName ;
-@Column(name = "last_update")
-Date lastUpdate ;
 
 public Actor() {
 }
@@ -45,17 +43,6 @@ public String getLastName() {
 public void setLastName(String lastName) {
     this.lastName = lastName;
 }
-public Date getLastUpdate() {
-    return lastUpdate;
-}
-public void setLastUpdate(Date lastUpdate) {
-    this.lastUpdate = lastUpdate;
-}
-    
-@Override
-public String toString() {
-    return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", lastUpdate=" + lastUpdate
-            + "]";
-}
+ 
 
 }
