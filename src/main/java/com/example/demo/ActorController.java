@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/sakila")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class ActorController {
 
     @Autowired
@@ -27,21 +27,32 @@ public String hola(){
 }
 
 @GetMapping("/actor")
-
 public List<Actor> findAll(){
   return actorRepository.findAll();
 }
+
 @GetMapping("/actor/{id}")
 public Optional<Actor> findById(@PathVariable Integer id){
     return actorRepository.findById(id);
 }
 
 //guardar el empleado
-@CrossOrigin(origins = "http://localhost:4200")
+/*@CrossOrigin(origins = "http://localhost:4200")
 @PostMapping("/actor")
 public Actor guardarActor(@RequestBody Actor actor){
+    return actorService.guardarActor(actor);
+}
+
+@CrossOrigin(origins = "*")  
+@PostMapping("/actor")
+public Actor addActor(@RequestBody Actor actor){
+    Actor getactor = actorRepository.save(actor);
+    return getactor;
+}*/
+
+@PostMapping("/actor")
+public Actor save(@RequestBody Actor actor){
     return actorRepository.save(actor);
 }
 
-    
 }
